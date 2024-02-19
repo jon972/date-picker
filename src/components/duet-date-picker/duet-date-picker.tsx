@@ -105,8 +105,6 @@ export class DuetDatePicker implements ComponentInterface {
   /**
    * Own Properties
    */
-  private monthSelectId = createIdentifier("DuetDateMonth")
-  private yearSelectId = createIdentifier("DuetDateYear")
   private dialogLabelId = createIdentifier("DuetDateLabel")
 
   private datePickerButton: HTMLButtonElement
@@ -667,69 +665,15 @@ export class DuetDatePicker implements ComponentInterface {
                     {this.localization.monthNames[focusedMonth]} {this.focusedDay.getFullYear()}
                   </h2>
 
-                  <label htmlFor={this.monthSelectId} class="duet-date__vhidden">
-                    {this.localization.monthSelectLabel}
-                  </label>
                   <div class="duet-date__select">
-                    <select
-                      id={this.monthSelectId}
-                      class="duet-date__select--month"
-                      ref={element => (this.monthSelectNode = element)}
-                      onChange={this.handleMonthSelect}
-                    >
-                      {this.localization.monthNames.map((month, i) => (
-                        <option
-                          key={month}
-                          value={i}
-                          selected={i === focusedMonth}
-                          disabled={
-                            !inRange(
-                              new Date(focusedYear, i, 1),
-                              minDate ? startOfMonth(minDate) : null,
-                              maxDate ? endOfMonth(maxDate) : null
-                            )
-                          }
-                        >
-                          {month}
-                        </option>
-                      ))}
-                    </select>
-                    <div class="duet-date__select-label" aria-hidden="true">
-                      <span>{this.localization.monthNamesShort[focusedMonth]}</span>
-                      <svg
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z" />
-                      </svg>
-                    </div>
-                  </div>
-
-                  <label htmlFor={this.yearSelectId} class="duet-date__vhidden">
-                    {this.localization.yearSelectLabel}
-                  </label>
-                  <div class="duet-date__select">
-                    <select id={this.yearSelectId} class="duet-date__select--year" onChange={this.handleYearSelect}>
-                      {range(minYear, maxYear).map(year => (
-                        <option key={year} selected={year === focusedYear}>
-                          {year}
-                        </option>
-                      ))}
-                    </select>
                     <div class="duet-date__select-label" aria-hidden="true">
                       <span>{this.focusedDay.getFullYear()}</span>
-                      <svg
-                        fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8.12 9.29L12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41 0L6.7 10.7c-.39-.39-.39-1.02 0-1.41.39-.38 1.03-.39 1.42 0z" />
-                      </svg>
+                    </div>
+                  </div>
+                  <br/><br/>
+                  <div class="duet-date__select">
+                    <div class="duet-date__select-label" aria-hidden="true">
+                      <span>{this.localization.monthNames[focusedMonth]}</span>
                     </div>
                   </div>
                 </div>

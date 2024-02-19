@@ -54,6 +54,7 @@ export const DatePickerInput: FunctionalComponent<DatePickerInputProps> = ({
         onBlur={onBlur}
         autoComplete="off"
         ref={inputRef}
+        readonly="readonly"
       />
       <input type="hidden" name={name} value={value} />
       <button class="duet-date__toggle" onClick={onClick} disabled={disabled} ref={buttonRef} type="button">

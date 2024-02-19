@@ -59,7 +59,7 @@ export const DatePickerMonth: FunctionalComponent<DatePickerMonthProps> = ({
         <tr>
           {mapWithOffset(localization.dayNames, firstDayOfWeek, dayName => (
             <th class="duet-date__table-header" scope="col">
-              <span aria-hidden="true">{dayName.substr(0, 2)}</span>
+              <span aria-hidden="true">{dayName.substr(0, 3)}.</span>
               <span class="duet-date__vhidden">{dayName}</span>
             </th>
           ))}

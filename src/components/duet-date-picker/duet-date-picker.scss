@@ -155,10 +155,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: var(--duet-radius);
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
-  margin-left: auto;
   margin-top: 8px;
-  max-width: 310px;
-  min-width: 290px;
   padding: 16px 16px 20px;
   position: relative;
   transform: none;
@@ -213,7 +210,6 @@
   line-height: 1.25;
   padding-bottom: 8px;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .duet-date__cell {
@@ -425,7 +421,6 @@
   font-size: 1.25rem;
   font-weight: var(--duet-font-bold);
   line-height: 1.25;
-  padding: 0 4px 0 8px;
   pointer-events: none;
   position: relative;
   width: 100%;
