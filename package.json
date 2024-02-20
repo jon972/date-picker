@@ -38,9 +38,7 @@
     "lint:js": "eslint \"**/*.{js,ts,tsx}\" --cache  --quiet",
     "lint:sass": "sass-lint -c ./.sasslintrc.json",
     "lint:sass:fix": "sass-lint-auto-fix",
-    "version": "npm run build",
-    "postversion": "npm publish",
-    "postpublish": "git push origin master --tags"
+    "version": "npm run build"
   },
   "engines": {
     "node": ">= 12.17.0",
