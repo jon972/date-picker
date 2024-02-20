@@ -33,14 +33,6 @@ import { DatePickerMonth } from "./date-picker-month"
 import defaultLocalization, { DuetLocalizedText } from "./date-localization"
 import isoAdapter, { DuetDateAdapter } from "./date-adapter"
 
-function range(from: number, to: number) {
-  var result: number[] = []
-  for (var i = from; i <= to; i++) {
-    result.push(i)
-  }
-  return result
-}
-
 const keyCode = {
   TAB: 9,
   ESC: 27,
@@ -536,14 +528,6 @@ export class DuetDatePicker implements ComponentInterface {
     }
   }
 
-  private handleMonthSelect = e => {
-    this.setMonth(parseInt(e.target.value, 10))
-  }
-
-  private handleYearSelect = e => {
-    this.setYear(parseInt(e.target.value, 10))
-  }
-
   private handleInputChange = () => {
     const target = this.datePickerInput
 
@@ -580,7 +564,6 @@ export class DuetDatePicker implements ComponentInterface {
   render() {
     const valueAsDate = parseISODate(this.value)
     const formattedDate = valueAsDate && this.dateAdapter.format(valueAsDate)
-    const selectedYear = (valueAsDate || this.focusedDay).getFullYear()
     const focusedMonth = this.focusedDay.getMonth()
     const focusedYear = this.focusedDay.getFullYear()
 
@@ -590,9 +573,6 @@ export class DuetDatePicker implements ComponentInterface {
       minDate != null && minDate.getMonth() === focusedMonth && minDate.getFullYear() === focusedYear
     const nextMonthDisabled =
       maxDate != null && maxDate.getMonth() === focusedMonth && maxDate.getFullYear() === focusedYear
-
-    const minYear = minDate ? minDate.getFullYear() : selectedYear - 10
-    const maxYear = maxDate ? maxDate.getFullYear() : selectedYear + 10
 
     return (
       <Host>
